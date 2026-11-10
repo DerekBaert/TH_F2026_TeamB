@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bfre1in0feovy"]
+
+[ext_resource type="Texture2D" uid="uid://cks13r253x5gx" path="res://icon.svg" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://bh77e2lvfx3yn" path="res://death_plane.gd" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://murtg50r8xug" path="res://player.tscn" id="2_tlwt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_036b0"]
+size = Vector2(150.14853, 86.79999)
+
+[node name="WORLD" type="Node2D" unique_id=1641306304]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1371971122]
+
+[node name="SPAWN" type="Sprite2D" parent="Node2D" unique_id=1539808080]
+position = Vector2(30.5, 77)
+scale = Vector2(1.4453125, 0.546875)
+texture = ExtResource("1_fj7yv")
+
+[node name="Platform" type="Sprite2D" parent="Node2D" unique_id=127036393]
+position = Vector2(215.74998, -14)
+scale = Vector2(0.95703113, 0.546875)
+texture = ExtResource("1_fj7yv")
+
+[node name="Platform Move" type="Sprite2D" parent="Node2D" unique_id=959432122]
+position = Vector2(389.75, -111)
+scale = Vector2(1.3164061, 0.546875)
+texture = ExtResource("1_fj7yv")
+
+[node name="DeathPlane" type="Sprite2D" parent="Node2D" unique_id=1582108366]
+position = Vector2(389.75, -111)
+scale = Vector2(1.3164061, 0.546875)
+texture = ExtResource("1_fj7yv")
+script = ExtResource("2_aqk2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DeathPlane" unique_id=2102993815]
+position = Vector2(-51.086044, 620.3714)
+scale = Vector2(8.231455, 0.99999994)
+shape = SubResource("RectangleShape2D_036b0")
+
+[node name="PLAYER" parent="." unique_id=1862716481 instance=ExtResource("2_tlwt5")]

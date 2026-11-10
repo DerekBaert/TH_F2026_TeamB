@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cg78l0gmswwk0"]
+
+[ext_resource type="Script" uid="uid://bxqgvw822eka4" path="res://HUD.gd" id="1_v2lfg"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1983200425]
+script = ExtResource("1_v2lfg")
+
+[node name="Timer" type="Label" parent="." unique_id=48023272]
+offset_right = 40.0
+offset_bottom = 23.0
