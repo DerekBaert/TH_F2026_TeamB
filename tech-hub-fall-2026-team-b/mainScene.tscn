@@ -8,6 +8,7 @@
 [node name="ColorRect" type="ColorRect" parent="." unique_id=478881183]
 offset_right = 1912.0
 offset_bottom = 1078.0
+scale = Vector2(2.3199997, 1)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.47506863, 0.42142898, 0.8847918, 1)
@@ -17,17 +18,30 @@ position = Vector2(961, 737)
 scale = Vector2(0.375, 0.375)
 
 [node name="StaticBody2D" parent="." unique_id=278962471 instance=ExtResource("2_g4qto")]
-position = Vector2(963, 960)
-scale = Vector2(9.880005, 1.2799988)
+position = Vector2(2244, 1016)
+scale = Vector2(22.160004, 1.2799988)
 
 [node name="StaticBody2D2" parent="." unique_id=1853803899 instance=ExtResource("2_g4qto")]
-position = Vector2(609, 645)
+position = Vector2(609, 703)
 scale = Vector2(1.24, 0.32)
 
 [node name="StaticBody2D3" parent="." unique_id=1132768654 instance=ExtResource("2_g4qto")]
-position = Vector2(1327, 655)
+position = Vector2(1327, 702)
 scale = Vector2(1.24, 0.32)
 
 [node name="StaticBody2D4" parent="." unique_id=256959580 instance=ExtResource("2_g4qto")]
-position = Vector2(956, 463)
+position = Vector2(956.00006, 516)
 scale = Vector2(1.24, 0.32)
+
+[node name="StaticBody2D5" parent="." unique_id=287999304 instance=ExtResource("2_g4qto")]
+position = Vector2(2463, 297.00003)
+scale = Vector2(1.24, 0.32)
+
+[node name="StaticBody2D6" parent="." unique_id=585553118 instance=ExtResource("2_g4qto")]
+position = Vector2(1898, 514)
+scale = Vector2(2.8767996, 0.32)
+
+[node name="StaticBody2D7" parent="." unique_id=1695560129 instance=ExtResource("2_g4qto")]
+position = Vector2(1898, 779)
+rotation = 1.5707964
+scale = Vector2(2.8767996, 0.32)

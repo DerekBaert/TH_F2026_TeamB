@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://vchv18yc355b" path="res://player_1.gd" id="1_3odsw"]
 [ext_resource type="Texture2D" uid="uid://b1h3vex1pdwga" path="res://PlaceholderPlayerSprites/sprite1.png" id="1_3pafw"]
 [ext_resource type="Texture2D" uid="uid://cykofgk4hulfo" path="res://PlaceholderPlayerSprites/sprite2.png" id="2_3odsw"]
+[ext_resource type="Texture2D" uid="uid://bfvrbkagud6p" path="res://PlaceholderPlayerSprites/fallingSprite1.png" id="2_s33xd"]
+[ext_resource type="Texture2D" uid="uid://dy7fjo57e2iij" path="res://PlaceholderPlayerSprites/fallingSprite2.png" id="3_lyl3y"]
 [ext_resource type="Texture2D" uid="uid://dkkhb52k15fkh" path="res://PlaceholderPlayerSprites/sprite3.png" id="3_woueq"]
 [ext_resource type="Texture2D" uid="uid://bqhrfwv4gwy4f" path="res://PlaceholderPlayerSprites/sprite4.png" id="4_bjfdx"]
 [ext_resource type="Texture2D" uid="uid://b5g022qvyyywg" path="res://PlaceholderPlayerSprites/movingSprite1.png" id="6_bjfdx"]
 [ext_resource type="Texture2D" uid="uid://beiruh28ulysu" path="res://PlaceholderPlayerSprites/jumpSprite1.png" id="6_c5mkm"]
 [ext_resource type="Texture2D" uid="uid://5gi6ly8pksnj" path="res://PlaceholderPlayerSprites/movingSprite2.png" id="7_hfcs4"]
-[ext_resource type="Texture2D" uid="uid://q1xb27xohrn6" path="res://PlaceholderPlayerSprites/jumpSprite2.png" id="7_sl0af"]
+[ext_resource type="Texture2D" uid="uid://digrg0xov2npo" path="res://PlaceholderPlayerSprites/jumpSprite3.png" id="8_lyl3y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvc0l"]
 radius = 139.0
@@ -16,6 +18,17 @@ height = 278.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvc0l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s33xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lyl3y")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_3pafw")
@@ -41,17 +54,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_c5mkm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_sl0af")
+"texture": ExtResource("8_lyl3y")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_c5mkm")
 }],
-"loop": 2,
+"loop": 0,
 "name": &"jump",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,5 +86,11 @@ scale = Vector2(1.2343749, 1.2109375)
 sprite_frames = SubResource("SpriteFrames_nvc0l")
 animation = &"jump"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.78831613
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1661089027]
+scale = Vector2(1.2343749, 1.2109375)
+process_callback = 0
+limit_top = 540
+limit_bottom = 540
+limit_smoothed = true
+position_smoothing_enabled = true
