@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://murtg50r8xug"]
+
+[ext_resource type="Script" uid="uid://dbdnyttoqedx2" path="res://PlayerBirdTestScript.gd" id="1_sweqy"]
+[ext_resource type="Texture2D" uid="uid://b1ffn6jkyg5nj" path="res://Screenshot 2026-10-01 143832.png" id="2_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://cv4io5pu1qpii" path="res://Screenshot 2026-10-01 143843.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://geacd7qj8f86" path="res://Screenshot 2026-10-01 143857.png" id="4_dw050"]
+[ext_resource type="Texture2D" uid="uid://nw4pjrk6ri4h" path="res://Screenshot 2026-10-01 143910.png" id="5_b26j0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mar7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2hs0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1jxqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dw050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b26j0")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mar7a"]
+radius = 42.0
+height = 180.0
+
+[node name="PLAYER" type="Node2D" unique_id=1862716481]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1184450357]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_sweqy")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1228865691]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1233194547]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_mar7a")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1344178726]
+shape = SubResource("CapsuleShape2D_mar7a")
