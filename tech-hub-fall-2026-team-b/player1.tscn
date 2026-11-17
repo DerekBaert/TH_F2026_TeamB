@@ -12,9 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://5gi6ly8pksnj" path="res://PlaceholderPlayerSprites/movingSprite2.png" id="7_hfcs4"]
 [ext_resource type="Texture2D" uid="uid://digrg0xov2npo" path="res://PlaceholderPlayerSprites/jumpSprite3.png" id="8_lyl3y"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvc0l"]
-radius = 139.0
-height = 278.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33xd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvc0l"]
 animations = [{
@@ -72,25 +70,27 @@ animations = [{
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 7.0
+"speed": 8.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1050940561]
 script = ExtResource("1_3odsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584729693]
-shape = SubResource("CapsuleShape2D_nvc0l")
+scale = Vector2(15.61, 15.61)
+shape = SubResource("RectangleShape2D_s33xd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=416409305]
-scale = Vector2(1.2343749, 1.2109375)
+scale = Vector2(1.225, 1.225)
 sprite_frames = SubResource("SpriteFrames_nvc0l")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1661089027]
+position = Vector2(0, 541)
 scale = Vector2(1.2343749, 1.2109375)
 process_callback = 0
-limit_top = 540
-limit_bottom = 540
+limit_top = -1000
+limit_bottom = 1081
 limit_smoothed = true
 position_smoothing_enabled = true
