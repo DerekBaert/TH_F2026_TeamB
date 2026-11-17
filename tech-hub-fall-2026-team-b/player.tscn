@@ -1,29 +1,155 @@
 [gd_scene format=3 uid="uid://buoaph73s8ak0"]
 
-[ext_resource type="Texture2D" uid="uid://bdk7dwdrl6bbs" path="res://IMG_0003.png" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://dwrupbce2xp8b" path="res://art/IMG_0022.png" id="1_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://n1kdu2wi5pd7" path="res://art/IMG_0023.png" id="2_5tmop"]
+[ext_resource type="Texture2D" uid="uid://icygstvycdtw" path="res://art/IMG_0024.png" id="3_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://bqcgtkva6o6la" path="res://art/IMG_0025.png" id="4_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://dysjrjlqldvwn" path="res://art/IMG_0026.png" id="5_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://ct0fkiq7mvid0" path="res://art/IMG_0027.png" id="6_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://cvu4fqfyobm1c" path="res://art/IMG_0028.png" id="7_7hik5"]
+[ext_resource type="Texture2D" uid="uid://cipccxbhktlfd" path="res://art/IMG_0029.png" id="8_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://36j2ukjqjjna" path="res://art/IMG_0030.png" id="9_2wuci"]
+[ext_resource type="Texture2D" uid="uid://untv3yq27qh4" path="res://art/IMG_0031.png" id="10_iruf7"]
+[ext_resource type="Texture2D" uid="uid://dplp4l753oh82" path="res://art/IMG_0032.png" id="11_j5n4i"]
+[ext_resource type="Texture2D" uid="uid://5cqy7yov8q5b" path="res://art/IMG_0033.png" id="12_634y6"]
+[ext_resource type="Texture2D" uid="uid://eqlq4tvfoe65" path="res://art/walk 2.png" id="13_efrwb"]
+[ext_resource type="Texture2D" uid="uid://6uj7qap3p172" path="res://art/IMG_0015.png" id="14_hiqhm"]
+[ext_resource type="Texture2D" uid="uid://de0wce4ja0n8i" path="res://art/IMG_0016.png" id="15_tkwlq"]
+[ext_resource type="Texture2D" uid="uid://uwl7qamcvif7" path="res://art/IMG_0017.png" id="16_hl5qd"]
+[ext_resource type="Texture2D" uid="uid://jobtfejkp6o0" path="res://art/IMG_0018.png" id="17_ek41f"]
+[ext_resource type="Texture2D" uid="uid://cqq7d2rgf6apx" path="res://art/IMG_0019.png" id="18_khis8"]
+[ext_resource type="Texture2D" uid="uid://cwg0euyotfntf" path="res://art/IMG_0020.png" id="19_b88wv"]
+[ext_resource type="Texture2D" uid="uid://cuub0husdb18c" path="res://art/IMG_0021.png" id="20_pgbbb"]
+
+[sub_resource type="GDScript" id="GDScript_lsfe1"]
+resource_name = "player.gd"
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_331ug"]
+load_path = "res://.godot/imported/IMG_0003.png-828bd7a6d405388112073bd9142d93e6.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_73gdl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4flbx")
+"texture": SubResource("CompressedTexture2D_331ug")
 }],
 "loop": 1,
-"name": &"walk",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qtqh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2wuci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iruf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j5n4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_634y6")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_efrwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_hiqhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tkwlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hl5qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ek41f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_khis8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b88wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pgbbb")
+}],
+"loop": 1,
+"name": &"walk_1",
+"speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5d0y"]
-radius = 75.0
-height = 204.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsfe1"]
+size = Vector2(145, 158)
 
-[node name="player" type="Area2D" unique_id=1810541294]
+[node name="Player" type="CharacterBody2D" unique_id=1444246927]
+position = Vector2(-2, 1)
+script = SubResource("GDScript_lsfe1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=609692516]
+position = Vector2(-22.999998, -89.99999)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_73gdl")
-animation = &"walk"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.48477346
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=918826822]
-position = Vector2(5, -2)
-shape = SubResource("CapsuleShape2D_a5d0y")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698874312]
+visible = false
+position = Vector2(-2.5, -82)
+shape = SubResource("RectangleShape2D_lsfe1")
