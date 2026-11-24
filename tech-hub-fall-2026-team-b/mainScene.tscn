@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://bd8k5bjclitai"]
 
-[ext_resource type="Script" uid="uid://bjuubb5bnqpp7" path="res://main_scene.gd" id="1_hr5et"]
 [ext_resource type="PackedScene" uid="uid://l1tkpso8ihsc" path="res://player1.tscn" id="1_iwpey"]
 [ext_resource type="PackedScene" uid="uid://dw2unhagx4m7y" path="res://Platform.tscn" id="2_g4qto"]
-[ext_resource type="PackedScene" uid="uid://by626866erlfs" path="res://Pause_menu.tscn" id="4_61od6"]
 
 [node name="Main" type="Node2D" unique_id=58158459]
-script = ExtResource("1_hr5et")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=478881183]
 offset_right = 1912.0
@@ -52,5 +49,3 @@ scale = Vector2(2.8767996, 0.32)
 [node name="StaticBody2D8" parent="." unique_id=93802753 instance=ExtResource("2_g4qto")]
 position = Vector2(29, 543)
 scale = Vector2(0.44232672, 5.9495316)
-
-[node name="Control" parent="." unique_id=2082999693 instance=ExtResource("4_61od6")]

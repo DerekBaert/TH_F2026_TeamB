@@ -9,7 +9,7 @@ extends CharacterBody2D
 enum State{IDLE, WALK, JUMP, DOWN}
 var current_state: State = State.IDLE
 
-var air_jumps = 1
+var num_of_jumps = 2
 
 func _physics_process(delta: float) -> void:
 	handle_input()
@@ -19,14 +19,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func handle_input() -> void:
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and num_of_jumps != 0:
 		velocity.y = jump_speed
 		current_state = State.JUMP
-		
-	if Input.is_action_just_pressed("ui_accept") and not is_on_floor() and air_jumps != 0:
-		velocity.y = jump_speed
-		current_state = State.JUMP
-		air_jumps = air_jumps - 1
+		num_of_jumps = num_of_jumps - 1
 		
 	var direction = Input.get_axis("ui_left", "ui_right")
 		
@@ -37,7 +33,7 @@ func handle_input() -> void:
 
 func _process(_delta: float) -> void:
 	if is_on_floor():
-		air_jumps = 1
+		num_of_jumps = 2
 
 func update_movement(delta: float) -> void:
 	velocity.y += gravity * delta
