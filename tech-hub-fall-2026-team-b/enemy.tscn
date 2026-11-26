@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://negrguov1bsn"]
+
+[ext_resource type="Texture2D" uid="uid://cs4h1s00w330m" path="res://Tatum's Folder/icon2.svg" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi18i"]
+size = Vector2(142, 118)
+
+[node name="Enemy" type="RigidBody2D" unique_id=1113334124]
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=836862119]
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999054306]
+shape = SubResource("RectangleShape2D_qi18i")
