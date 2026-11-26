@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cxxxla4m00a78"]
+
+[ext_resource type="FontFile" uid="uid://dfba0bxbmk2gh" path="res://Funny PERSONAL USE ONLY!.ttf" id="1_owtx6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owtx6"]
+bg_color = Color(0.9764706, 0.7372549, 0.17254902, 1)
+border_width_left = 5
+border_width_top = 15
+border_width_right = 5
+border_width_bottom = 15
+border_color = Color(0.96862745, 0.29803923, 0.023529412, 1)
+border_blend = true
+corner_radius_top_left = 42
+corner_radius_top_right = 42
+corner_radius_bottom_right = 42
+corner_radius_bottom_left = 42
+shadow_size = 21
+shadow_offset = Vector2(-5, 10)
+anti_aliasing_size = 1.727
+
+[node name="Control" type="CanvasLayer" unique_id=1075207816]
+
+[node name="DeathScreen" type="Control" parent="." unique_id=1928983037]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="DeathScreen" unique_id=1523322390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen" unique_id=2031073478]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.5
+offset_top = -234.5
+offset_right = 372.5
+offset_bottom = 234.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="DeathScreen/VBoxContainer" unique_id=348905953]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6156863, 0.6117647, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.10980392, 0.48235294, 0.90588236, 1)
+theme_override_constants/shadow_offset_x = -12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 34
+theme_override_fonts/font = ExtResource("1_owtx6")
+theme_override_font_sizes/font_size = 150
+text = "Game over"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="DeathScreen/VBoxContainer" unique_id=853784070]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("1_owtx6")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_owtx6")
+text = "Retry"
+
+[node name="Button2" type="Button" parent="DeathScreen/VBoxContainer" unique_id=1239429113]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("1_owtx6")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_owtx6")
+text = "Quit"

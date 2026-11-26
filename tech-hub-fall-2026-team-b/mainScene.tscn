@@ -9,8 +9,9 @@
 script = ExtResource("1_hr5et")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=478881183]
-offset_right = 1912.0
-offset_bottom = 1078.0
+offset_top = -1162.0
+offset_right = 3012.0693
+offset_bottom = 1163.0
 scale = Vector2(2.3199997, 1)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -21,8 +22,8 @@ position = Vector2(957, 900)
 scale = Vector2(0.375, 0.375)
 
 [node name="StaticBody2D" parent="." unique_id=278962471 instance=ExtResource("2_g4qto")]
-position = Vector2(2244, 1110)
-scale = Vector2(22.160004, 1.2799988)
+position = Vector2(1217, 1110.0001)
+scale = Vector2(12.000002, 1.2799988)
 
 [node name="StaticBody2D2" parent="." unique_id=1853803899 instance=ExtResource("2_g4qto")]
 position = Vector2(609, 781)
@@ -54,3 +55,7 @@ position = Vector2(29, 543)
 scale = Vector2(0.44232672, 5.9495316)
 
 [node name="Control" parent="." unique_id=2082999693 instance=ExtResource("4_61od6")]
+
+[node name="StaticBody2D9" parent="." unique_id=1747734797 instance=ExtResource("2_g4qto")]
+position = Vector2(3972, 1110.0001)
+scale = Vector2(12.000002, 1.2799988)

@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://by626866erlfs"]
 
 [ext_resource type="Script" uid="uid://j0skqosm1rcs" path="res://pause_menu.gd" id="1_sds3c"]
+[ext_resource type="FontFile" uid="uid://dfba0bxbmk2gh" path="res://Funny PERSONAL USE ONLY!.ttf" id="2_trr71"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trr71"]
+bg_color = Color(0.9764706, 0.7372549, 0.17254902, 1)
+border_width_left = 5
+border_width_top = 15
+border_width_right = 5
+border_width_bottom = 15
+border_color = Color(0.96862745, 0.29803923, 0.023529412, 1)
+border_blend = true
+corner_radius_top_left = 42
+corner_radius_top_right = 42
+corner_radius_bottom_right = 42
+corner_radius_bottom_left = 42
+shadow_size = 21
+shadow_offset = Vector2(-5, 10)
+anti_aliasing_size = 1.727
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=2092638827]
 
@@ -35,22 +52,39 @@ offset_right = 344.0
 offset_bottom = 234.5
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
 [node name="Label" type="Label" parent="PauseMenu/VBoxContainer" unique_id=1208063246]
 layout_mode = 2
-theme_override_font_sizes/font_size = 104
-text = "Game paused
-"
+theme_override_colors/font_color = Color(0.6156863, 0.6117647, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.10980392, 0.48235294, 0.90588236, 1)
+theme_override_constants/shadow_offset_x = -12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 34
+theme_override_fonts/font = ExtResource("2_trr71")
+theme_override_font_sizes/font_size = 150
+text = "Game paused"
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="PauseMenu/VBoxContainer" unique_id=468996841]
 layout_mode = 2
-theme_override_font_sizes/font_size = 57
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("2_trr71")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_trr71")
 text = "Resume"
 
 [node name="Quit" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1730116254]
 layout_mode = 2
-theme_override_font_sizes/font_size = 57
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("2_trr71")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_trr71")
 text = "Quit"
 
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
