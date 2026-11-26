@@ -45,6 +45,32 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("8_ucfvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2dyae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2dyae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2u5n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_73nau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_skrk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_wyqjk")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_a7mna")
 }, {
 "duration": 1.0,
@@ -85,7 +111,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"hurt",
-"speed": 13.5
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,25 +172,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_sxias")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_ucfvk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_2dyae")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_2u5n8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_73nau")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_skrk8")
 }],
 "loop": 1,
 "name": &"jump",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -197,6 +208,6 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=919454978]
 sprite_frames = SubResource("SpriteFrames_73gdl")
-animation = &"walk"
+animation = &"fall"
 autoplay = "idle"
-frame_progress = 0.884708
+frame_progress = 0.35639575
