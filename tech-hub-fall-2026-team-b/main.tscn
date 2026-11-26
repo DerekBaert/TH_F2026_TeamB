@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cmv213kqbiroe"]
+
+[ext_resource type="PackedScene" uid="uid://negrguov1bsn" path="res://enemy.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bifinptwthtqm" path="res://icon.svg" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://eblt0umry6l" path="res://enemy.gd" id="2_h2yge"]
+
+[sub_resource type="Curve2D" id="Curve2D_7dm0k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 203, 112, 0, 0, 0, 0, 697, 107, 0, 0, 0, 0, 206, 113, 0, 0, 0, 0, 203, 112)
+}
+point_count = 4
+
+[node name="main" type="Node" unique_id=1031762080]
+
+[node name="MobPath" type="Path2D" parent="." unique_id=1791787188]
+curve = SubResource("Curve2D_7dm0k")
+
+[node name="MobFollow" type="PathFollow2D" parent="MobPath" unique_id=1066269573]
+position = Vector2(203, 112)
+rotates = false
+
+[node name="Enemy" parent="MobPath/MobFollow" unique_id=1113334124 instance=ExtResource("1_ig7tw")]
+position = Vector2(13, -3)
+gravity_scale = 0.0
+script = ExtResource("2_h2yge")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2041328827]
+position = Vector2(549, 253)
+texture = ExtResource("2_0xm2m")
