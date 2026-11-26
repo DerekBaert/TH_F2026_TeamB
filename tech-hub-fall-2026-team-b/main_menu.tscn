@@ -53,7 +53,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_glbon"]
 resource_name = "mouse exited"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -88,6 +88,15 @@ _data = {
 &"RESET": SubResource("Animation_fu7sn"),
 &"mouse exited": SubResource("Animation_glbon"),
 &"mouse hovered": SubResource("Animation_jix8l")
+}
+
+[sub_resource type="Animation" id="Animation_nlkkf"]
+resource_name = "mouse hovered"
+length = 0.39999999999999997
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qe12f"]
+_data = {
+&"mouse hovered": SubResource("Animation_nlkkf")
 }
 
 [node name="MainMenu" type="Control" unique_id=1269233718]
@@ -168,6 +177,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Options"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button2" unique_id=1824878915]
+libraries/ = SubResource("AnimationLibrary_qe12f")
+
 [node name="Button3" type="Button" parent="." unique_id=1636904589]
 layout_mode = 0
 offset_left = 40.0
@@ -185,6 +197,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Credits"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button3" unique_id=1415462104]
+
 [node name="Button4" type="Button" parent="." unique_id=1947720620]
 layout_mode = 0
 offset_left = 40.0
@@ -201,6 +215,8 @@ theme_override_font_sizes/font_size = 53
 theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Close game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button4" unique_id=293071886]
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

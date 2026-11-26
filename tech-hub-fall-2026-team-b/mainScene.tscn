@@ -21,6 +21,8 @@ color = Color(0.47506863, 0.42142898, 0.8847918, 1)
 position = Vector2(957, 900)
 scale = Vector2(0.375, 0.375)
 
+[node name="Control" parent="." unique_id=2082999693 instance=ExtResource("4_61od6")]
+
 [node name="StaticBody2D" parent="." unique_id=278962471 instance=ExtResource("2_g4qto")]
 position = Vector2(1217, 1110.0001)
 scale = Vector2(12.000002, 1.2799988)
@@ -54,8 +56,10 @@ scale = Vector2(2.8767996, 0.32)
 position = Vector2(29, 543)
 scale = Vector2(0.44232672, 5.9495316)
 
-[node name="Control" parent="." unique_id=2082999693 instance=ExtResource("4_61od6")]
-
 [node name="StaticBody2D9" parent="." unique_id=1747734797 instance=ExtResource("2_g4qto")]
 position = Vector2(3972, 1110.0001)
 scale = Vector2(12.000002, 1.2799988)
+
+[node name="StaticBody2D10" parent="." unique_id=1429025429 instance=ExtResource("2_g4qto")]
+position = Vector2(6434.0005, 1110.0001)
+scale = Vector2(5.560002, 1.2799988)

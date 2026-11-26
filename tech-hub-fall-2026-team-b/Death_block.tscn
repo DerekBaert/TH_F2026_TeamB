@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ssyss6rfe5bc"]
 
+[ext_resource type="Script" uid="uid://cpnonkhaeq3ed" path="res://death_block.gd" id="1_40v15"]
 [ext_resource type="Texture2D" uid="uid://iwoclsrj47jh" path="res://yellow-triangle-geometric-shape-vector_53876-175072.png" id="1_u4t4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvc0l"]
@@ -9,6 +10,7 @@ size = Vector2(95, 146)
 size = Vector2(112, 169)
 
 [node name="Node2D" type="Node2D" unique_id=1012090560]
+script = ExtResource("1_40v15")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1319220897]
 
@@ -25,3 +27,5 @@ shape = SubResource("RectangleShape2D_nvc0l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=245943225]
 position = Vector2(0, 62.5)
 shape = SubResource("RectangleShape2D_38mah")
+
+[connection signal="area_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cxxxla4m00a78"]
 
+[ext_resource type="Script" uid="uid://bpsx6wxbwyayn" path="res://death_screen.gd" id="1_3ldu8"]
 [ext_resource type="FontFile" uid="uid://dfba0bxbmk2gh" path="res://Funny PERSONAL USE ONLY!.ttf" id="1_owtx6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owtx6"]
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3ldu8")
 
 [node name="Panel" type="Panel" parent="DeathScreen" unique_id=1523322390]
 layout_mode = 1
