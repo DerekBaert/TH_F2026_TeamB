@@ -26,7 +26,7 @@ border_width_left = 5
 border_width_top = 15
 border_width_right = 5
 border_width_bottom = 15
-border_color = Color(0.6156863, 0.6117647, 1, 1)
+border_color = Color(0.003921569, 0.4509804, 1, 1)
 border_blend = true
 corner_radius_top_left = 42
 corner_radius_top_right = 42
@@ -35,6 +35,60 @@ corner_radius_bottom_left = 42
 shadow_size = 21
 shadow_offset = Vector2(-5, 10)
 anti_aliasing_size = 1.727
+
+[sub_resource type="Animation" id="Animation_fu7sn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 336)]
+}
+
+[sub_resource type="Animation" id="Animation_glbon"]
+resource_name = "mouse exited"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(80, 336), Vector2(40, 336)]
+}
+
+[sub_resource type="Animation" id="Animation_jix8l"]
+resource_name = "mouse hovered"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(40, 336), Vector2(80, 336)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_glbon"]
+_data = {
+&"RESET": SubResource("Animation_fu7sn"),
+&"mouse exited": SubResource("Animation_glbon"),
+&"mouse hovered": SubResource("Animation_jix8l")
+}
 
 [node name="MainMenu" type="Control" unique_id=1269233718]
 layout_mode = 3
@@ -76,10 +130,15 @@ offset_right = 404.0
 offset_bottom = 185.25
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1145299550]
-layout_mode = 2
+[node name="Button" type="Button" parent="." unique_id=1145299550]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 336.0
+offset_right = 404.0
+offset_bottom = 435.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_hover_color = Color(0.6156863, 0.6117647, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
 theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("3_fu7sn")
@@ -88,11 +147,20 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Start game"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2116937637]
-layout_mode = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button" unique_id=1870640234]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_glbon")
+
+[node name="Button2" type="Button" parent="." unique_id=2116937637]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 439.0
+offset_right = 404.0
+offset_bottom = 538.0
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.6156863, 0.6117647, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0.4509804, 1, 1)
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_hover_color = Color(0.6156863, 0.6117647, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
 theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 53
@@ -100,11 +168,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Options"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1636904589]
-layout_mode = 2
+[node name="Button3" type="Button" parent="." unique_id=1636904589]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 542.0
+offset_right = 404.0
+offset_bottom = 641.0
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.6156863, 0.6117647, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0.4509804, 1, 1)
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_hover_color = Color(0.6156863, 0.6117647, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
 theme_override_constants/outline_size = 18
 theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 53
@@ -112,7 +185,26 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
 text = "Credits"
 
-[connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_credits_pressed"]
+[node name="Button4" type="Button" parent="." unique_id=1947720620]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 645.0
+offset_right = 404.0
+offset_bottom = 744.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.61478245, 0.61311245, 1, 1)
+theme_override_colors/font_hover_color = Color(0.6156863, 0.6117647, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.4500003, 1, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Close game"
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
